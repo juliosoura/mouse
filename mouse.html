@@ -1,0 +1,16 @@
+// Obtém o elemento body da página
+const body = document.querySelector('body');
+
+// Adiciona um event listener ao documento para monitorar o movimento do mouse
+document.addEventListener('mousemove', function(event) {
+  // Calcula as coordenadas do mouse em relação ao centro da janela
+  const x = event.clientX - window.innerWidth / 2;
+  const y = event.clientY - window.innerHeight / 2;
+
+  // Calcula as cores vermelho e verde a partir das coordenadas do mouse
+  const red = Math.abs(x / (window.innerWidth / 2)) * 255;
+  const green = Math.abs(y / (window.innerHeight / 2)) * 255;
+
+  // Define a cor de fundo do body com base nas cores vermelho e verde
+  body.style.backgroundColor = `rgb(${red}, ${green}, 100)`;
+});
